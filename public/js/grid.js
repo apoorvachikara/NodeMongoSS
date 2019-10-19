@@ -1,11 +1,6 @@
 
 $(function() {
-    var dataLoaded;
-    $.getJSON('/db/clients.json', function(data) {
-        dataLoaded = data;
-        console.log(data);
-
-    });
+  
     $("#jsGrid").jsGrid({
         height: "70%",
         width: "100%",
@@ -24,32 +19,11 @@ $(function() {
                     url: "/client",
                     data: filter
                 });
-            },
-            insertItem: function(item) {
-                return $.ajax({
-                    type: "POST",
-                    url: "/clients",
-                    data: item
-                });
-            },
-            updateItem: function(item) {
-                return $.ajax({
-                    type: "PUT",
-                    url: "/clients",
-                    data: item
-                });
-            },
-            deleteItem: function(item) {
-                return $.ajax({
-                    type: "DELETE",
-                    url: "/clients",
-                    data: item
-                });
             }
         },
         fields: [
             { name: "_id", type: "text",  title: "_id"},
-            { name: "caseid", type: "text",  title: "caseid"},
+            { name: "caseId", type: "String",  title: "caseId"},
             { name: "caseState", type: "text",  title: "caseState"},
             { name: "caseStatus", type: "text", title: "caseStatus" },
             { name: "createdDate", type: "number", title: "createdDate" },

@@ -3,9 +3,9 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-var mongoose = require('mongoose');
 
-const MONGO_URL = "mongodb://nitank:12ab34cd@ds259175.mlab.com:59175/devdoit"
+
+
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/client');
@@ -13,13 +13,7 @@ var usersRouter = require('./routes/client');
 var app = express();
 
 
-// var db = mongoose.connect(MONGO_URL);
-// db.then(() => {
-//       console.log("Connected to DB");
-//   })
-//   .catch((err) => {
-//       console.log(err);
-//   })
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
